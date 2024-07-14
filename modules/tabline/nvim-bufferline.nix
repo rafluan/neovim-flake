@@ -52,7 +52,6 @@ in
       vim.luaConfigRC.nvimBufferline = nvim.dag.entryAnywhere /* lua */ ''
         require("bufferline").setup{
            options = {
-              numbers = "both",
               close_command = ${mouse.close},
               right_mouse_command = ${mouse.right},
               indicator = {
@@ -89,9 +88,6 @@ in
                     end
                  end
                  return s
-              end,
-              numbers = function(opts)
-                return string.format('%s·%s', opts.raise(opts.id), opts.lower(opts.ordinal))
               end,
            }
         }
